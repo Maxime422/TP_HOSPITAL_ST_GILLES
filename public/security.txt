@@ -1,0 +1,7 @@
+# Contact information for security issues
+Contact: mailto:security@yourdomain.com
+
+# Expiration date for this file
+Expires: 2025-12-31T11:59:00.000Z
+
+Preferred-Languages: fr, en

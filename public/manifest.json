@@ -1,0 +1,36 @@
+{
+  "name": "nomprojet",
+  "short_name": "nomprojet",
+  "version": "1.0.0",
+  "manifest_version": 1,
+  "author": "Maxime Germis",
+  "description": "Une application web progressive pour gérer X, Y, Z.",
+  "categories": ["productivity", "utilities", "business"],
+  
+
+  "icons": [
+    {
+      "src": "./assets/logo/icon-128x128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "./assets/logo/icon-256x256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "./assets/logo/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "lang": "fr-FR",
+  "dir": "ltr",
+  "orientation": "any",
+  "start_url": "/public/index.php",
+  "background_color": "#fafafa",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#fafafa"
+}

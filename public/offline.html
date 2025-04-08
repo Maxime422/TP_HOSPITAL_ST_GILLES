@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Maxime Germis" />
+    <title>Offline Page</title>
+
+    <!-- Inline CSS for simplicity and offline compatibility -->
+    <style>
+      body {
+        font-family: Arial, sans-serif; /* Use a system font to avoid dependencies */
+        margin: 2em;
+        text-align: center;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      h1 {
+        color: #131313;
+      }
+      p {
+        margin-block: 1rem;
+      }
+      button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>You Are Offline</h1>
+    <p>It seems you are not connected to the Internet. Please check your network connection.</p>
+    <p>You can try reloading the page by clicking the button below.</p>
+    <button type="button" aria-label="Reload the page">⤾ Reload</button>
+
+    <!-- Inline JavaScript for simplicity and offline compatibility -->
+    <script>
+      // Prevent multiple reloads
+      let hasReloaded = false;
+
+      // Manual reload functionality
+      document.querySelector("button").addEventListener("click", () => {
+        window.location.reload();
+      });
+
+      // Listen for the online event and reload the page when the network is restored
+      window.addEventListener("online", () => {
+        if (!hasReloaded) {
+          hasReloaded = true;
+          window.location.reload();
+        }
+      });
+
+      // Check if the server is reachable and reload the page if it is
+      async function checkNetworkAndReload() {
+        if (hasReloaded) return; // Prevent multiple reloads
+
+        try {
+          const response = await fetch(".");
+          // Reload the page if the server responds with a valid status
+          if (response.status >= 200 && response.status < 500) {
+            hasReloaded = true;
+            window.location.reload();
+            return;
+          }
+        } catch {
+          // Network error, no action needed
+          console.error("Network error detected:", error);
+        }
+
+        // Schedule the next check after 5 seconds
+        setTimeout(checkNetworkAndReload, 5000);
+      }
+
+      // Start the initial network check
+      checkNetworkAndReload();
+    </script>
+  </body>
+</html>

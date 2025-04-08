@@ -1,0 +1,21 @@
+# Ignore ESLint configuration files
+eslint.config.*
+
+# Ignore dependencies
+node_modules/
+
+# Ignore build output
+dist/
+build/
+
+# Ignore test coverage reports
+coverage/
+
+# Ignore minified files
+*.min.js
+
+# Ignore log files
+*.log
+
+# Ignore package lock file
+package-lock.json

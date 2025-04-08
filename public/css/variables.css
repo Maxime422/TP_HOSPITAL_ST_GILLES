@@ -1,0 +1,88 @@
+/* Global variables */
+:root {
+    /* Fonts */
+  --font-main: "Montserrat", sans-serif;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+  --font-weight-black: 900;
+
+  /* Fonts sizes */
+  --text-size-body-slim: 0.75rem;
+  --text-size-body: 1rem;
+  --text-size-title-medium: 1.2rem;
+  --text-size-title-large: 1.4rem;
+  --text-size-headline-medium: 1.7rem;
+  --text-size-display-medium: 2.8rem;
+
+  /* Borders */
+  --border-radius-small: 0.5rem;
+  --border-radius-medium: 1rem;
+  --border-radius-circle: 50%;
+
+  /* Margin and padding */
+  --margin-small: 0.5rem;
+  --margin-left-right-small: 0.5rem 0;
+  --margin-medium: 1rem;
+  --margin-left-right-medium: 1rem 0;
+  --margin-large: 2rem;
+  --margin-left-right-large: 2rem 0;
+  --margin-extra: 4rem;
+  --margin-left-right-extra: 4rem 0;
+  --margin-top-bottom-small: 0.5rem 0;
+  --margin-top-bottom-medium: 1rem 0;
+  --margin-top-bottom-large: 2rem 0;
+
+  --padding-small: 0.5rem;
+  --padding-medium-small: 0.75rem;
+  --padding-medium: 1rem;
+  --padding-large: 1.5rem;
+  --padding-extra-large: 2rem;
+  --padding-extra: 3rem;
+  --padding-left-right-small: 0 0.5rem;
+  --padding-left-right-medium: 0 1rem;
+  --padding-left-right-large: 0 1.5rem;
+  --padding-left-right-extra: 4rem 0;
+  --padding-top-bottom-large: 2rem 0;
+  --padding-top-bottom-extra: 4rem 0;
+  --padding-top-bottom-medium: 1rem 0;
+
+  /* Gaps */
+  --gap-small: 0.5rem;
+  --gap-medium-small: 0.75rem;
+  --gap-medium: 1rem;
+  --gap-large: 1.5rem;
+  --gap-extra-large: 2rem;
+  --gap-extra: 4rem;
+}
+
+/* Body */
+body {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--font-main);
+}
+
+/* Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+}
+
+button,
+select,
+input,
+a,
+textarea {
+  all: unset;
+  display: inline-block;
+  cursor: pointer;
+}

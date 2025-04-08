@@ -1,0 +1,20 @@
+# Allow all search engines to crawl the site
+User-agent: *
+
+# Disallow access to non-public directories
+Disallow: /tests/
+Disallow: /sql/
+Disallow: /cypress/
+
+# Allow access to the public directory and its files
+Allow: /public/
+Allow: /public/index.php
+Allow: /public/offline.html
+Allow: /public/manifest.json
+Allow: /public/sitemap.xml
+Allow: /public/assets/
+Allow: /public/assets/css/
+Allow: /public/assets/js/
+
+# Specify the location of the sitemap
+Sitemap: http://localhost:5500/public/sitemap.xml
