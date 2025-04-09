@@ -1,12 +1,11 @@
 {
-  "name": "nomprojet",
-  "short_name": "nomprojet",
+  "name": "patient-management-saint-gilles-crm-interface",
+  "short_name": "patient-management-saint-gilles-crm",
   "version": "1.0.0",
   "manifest_version": 1,
   "author": "Maxime Germis",
-  "description": "Une application web progressive pour gérer X, Y, Z.",
-  "categories": ["productivity", "utilities", "business"],
-  
+  "description": "Discover the patient management solution of Saint Gilles Hospital - an intuitive interface to track, organize, and access patient information and appointments.",
+  "categories": ["medical", "productivity", "business", "health", "utilities"],
 
   "icons": [
     {
@@ -25,7 +24,7 @@
       "sizes": "512x512"
     }
   ],
-  "lang": "fr-FR",
+  "lang": "en",
   "dir": "ltr",
   "orientation": "any",
   "start_url": "/public/index.php",

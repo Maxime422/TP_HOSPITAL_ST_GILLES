@@ -1,6 +1,6 @@
 /* Global variables */
 :root {
-    /* Fonts */
+  /* Fonts */
   --font-main: "Montserrat", sans-serif;
   --font-weight-medium: 500;
   --font-weight-semi-bold: 600;
@@ -85,4 +85,61 @@ textarea {
   all: unset;
   display: inline-block;
   cursor: pointer;
+}
+
+input[type="search"]:focus {
+  border: none;
+  outline: none;
+  color: var(--color-white);
+  caret-color: var(--color-white);
+}
+
+/* Correction du style autofill */
+input[type="search"]:-webkit-autofill {
+  background-color: transparent !important;
+  color: rgb(255, 255, 255) !important;
+  transition: background-color 0s 5000s;
+}
+
+/* Fonts */
+h1,
+h2 {
+  font-size: var(--text-size-extra);
+  font-weight: var(--font-weight-bold);
+  display: block;
+}
+
+h3 {
+  font-size: var(--text-size-large);
+  font-weight: var(--font-weight-extra-bold);
+  display: block;
+}
+
+i {
+  font-size: var(--text-size-medium);
+}
+
+h4,
+h5,
+button,
+a,
+input,
+p,
+textarea,
+label,
+select {
+  font-size: var(--text-size-small);
+  font-weight: var(--font-weight-bold);
+}
+
+span {
+  font-weight: var(--font-weight-bold);
+}
+
+.styleText {
+  color: var(--color-blue-1);
+}
+
+.smallText {
+  font-size: var(--text-size-body-slim);
 }

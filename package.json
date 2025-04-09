@@ -1,7 +1,7 @@
 {
-  "name": "template-project",
+  "name": "patient-management-saint-gilles-crm-interface",
   "version": "1.0.0",
-  "description": "A template project for scalable web development.",
+  "description": "Discover the patient management solution of Saint Gilles Hospital - an intuitive interface to track, organize, and access patient information and appointments.",
   "scripts": {
     "test": "jest",
     "test:unit": "jest --testPathPattern=tests/unit",
@@ -20,14 +20,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Maxime422/template-project.git"
+    "url": "git+https://github.com/Maxime422/TP_HOSPITAL_ST_GILLES.git"
   },
   "author": "Maxime Germis",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Maxime422/template-project/issues"
+    "url": "https://github.com/Maxime422/TP_HOSPITAL_ST_GILLES/issues"
   },
-  "homepage": "https://github.com/Maxime422/template-project#readme",
+  "homepage": "https://github.com/Maxime422/TP_HOSPITAL_ST_GILLES#readme",
   "devDependencies": {
     "@eslint/js": "^9.24.0",
     "cypress": "^14.2.1",

@@ -39,7 +39,7 @@ Brève description du projet. Quel est son objectif ? Qui est-il destiné à aid
 1. **Cloner le dépôt :**
 
    ```bash
-   git clone https://github.com/VotreNomUtilisateur/VotreRepo.git
+   git clone https://github.com/Maxime422/TP_HOSPITAL_ST_GILLES.git
    ```
 
 2. **Se rendre dans le dossier du projet :**
