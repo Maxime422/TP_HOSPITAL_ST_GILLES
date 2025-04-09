@@ -104,13 +104,13 @@ input[type="search"]:-webkit-autofill {
 /* Fonts */
 h1,
 h2 {
-  font-size: var(--text-size-extra);
+  font-size: var(--text-size-headline-medium);
   font-weight: var(--font-weight-bold);
   display: block;
 }
 
 h3 {
-  font-size: var(--text-size-large);
+  font-size: var(--text-size-title-large);
   font-weight: var(--font-weight-extra-bold);
   display: block;
 }

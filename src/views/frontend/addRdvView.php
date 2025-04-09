@@ -1,13 +1,33 @@
 <?php
 $title = "Add a New Appointment - Patient Management - Saint Gilles Hospital CRM Interface";
 $description = "Easily schedule a patient consultation by entering the key details — streamline your calendar and stay organized.";
+require_once '../../models/frontend.php';
+?>
+
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  addRdv();
+}
 ?>
 
 <?php ob_start(); ?>
-<h1>Forum Communautaire NovaTalk</h1>
-<p>Bienvenue sur NovaTalk, l'espace d'échange et de discussion entre passionnés de technologie, de création et de
-  culture numérique. Rejoins la communauté, partage tes idées, pose tes questions et développe ton réseau !</p>
+<section class="hero">
+  <div class="heroContent">
+    <h1>Prendre un nouveau rendez-vous</h1>
+    <p>Remplissez le formulaire ci-dessous pour fixer un rendez-vous avec l'un de nos professionnels
+      de
+      santé. Veuillez vérifier attentivement les informations avant de valider.</p>
+  </div>
+  <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
+    <label for="dateHour">Date du Rdv</label>
+    <input type="date" name="dateHour" id="dateHour" required>
 
-<?php $content = ob_get_clean(); ?>
+    <label for="idPatients">ID du patient</label>
+    <input type="number" name="idPatients" id="idPatients" required>
 
-<?php require_once('template.php') ?>
+    <input type="submit" name="submit" class="cta">
+  </form>
+
+  <?php $content = ob_get_clean(); ?>
+
+  <?php require_once('template.php') ?>

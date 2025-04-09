@@ -10,7 +10,7 @@
     content="<?= htmlspecialchars($description ?? "An intuitive interface to manage patients and appointments at Saint Gilles Hospital.") ?>" />
   <meta name="author" content="Maxime Germis" />
 
-  <link rel="icon" type="image/png" sizes="76x76" href="../../../public/assets/logos/logo-128.png" />
+  <link rel="icon" type="image/png" sizes="76x76" href="./public/assets/logos/logo-128.png" />
 
   <link rel="stylesheet" href="../../../public/css/variables.css" />
   <link rel="stylesheet" href="../../../public/css/style.css" />

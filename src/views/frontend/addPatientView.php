@@ -1,7 +1,7 @@
 <?php
 $title = "Add Patient - Patient Management - Saint Gilles Hospital CRM Interface";
 $description = "Quickly register a new patient in our system. Fill in the essential information to ensure optimal care at Saint Gilles Hospital.";
-require_once '../../models/frontend.php';
+require_once './src/models/frontend.php';
 ?>
 
 <?php
@@ -12,11 +12,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <?php ob_start(); ?>
 <section class="hero">
-  <div class="hero__content">
+  <div class="heroContent">
     <h1>Prendre un nouveau rendez-vous</h1>
-    <p>Remplissez le formulaire ci-dessous pour fixer un rendez-vous avec l’un de nos professionnels
-      de
-      santé. Veuillez vérifier attentivement les informations avant de valider.</p>
+    <p>Remplissez le formulaire ci-dessous pour fixer un rendez-vous avec l'un de nos professionnels de santé. Veuillez
+      vérifier attentivement les informations avant de valider.</p>
   </div>
   <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
     <label for="prenom">Prénom</label>

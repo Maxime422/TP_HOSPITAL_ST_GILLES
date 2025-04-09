@@ -1,12 +1,6 @@
 <?php
 require_once "./PHP/validation.php";
 
-if (isset($_POST['idPatients'], $_POST['dateHour'])) {
-    $tab = [];
-
-    foreach ($_POST as $key => $value) {
-        $tab[$key] = sanitize($value);
-    }
 
     function regexDate($data) // Renamed function for clarity
     {
