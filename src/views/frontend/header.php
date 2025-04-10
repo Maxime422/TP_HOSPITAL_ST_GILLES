@@ -5,7 +5,7 @@
     </a>
     <nav>
       <ul>
-      <li><a href="./index.php?action=patientsList">Patients List</a></li>
+        <li><a href="./index.php?action=patientsList">Patients List</a></li>
         <li><a href="./index.php?action=rdvList">Appointments List</a></li>
       </ul>
     </nav>

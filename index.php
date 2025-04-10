@@ -25,16 +25,22 @@ if (isset($_GET['action'])) {
       break;
 
     case 'addPatient':
-      getPatientsList();
+      addPatientView();
       break;
 
     case 'addRdv':
-      require 'src/views/frontend/add-rdv-view.php';
+      addRdvView();
       break;
 
     case 'rdvList':
       rdvListView();
       break;
+
+    case 'deletePatient':
+      deletePatient();
+      break;
+
+      
 
     default:
       echo 'Page introuvable.';

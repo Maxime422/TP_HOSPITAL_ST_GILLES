@@ -4,11 +4,6 @@ $description = "Easily schedule a patient consultation by entering the key detai
 require_once './src/models/frontend.php';
 ?>
 
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  addRdv();
-}
-?>
 
 <?php ob_start(); ?>
 <section class="hero">
@@ -18,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       de
       santé. Veuillez vérifier attentivement les informations avant de valider.</p>
   </div>
-  <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
+  <form action="" method="post">
     <label for="dateHour">Date du Rdv</label>
     <input type="date" name="dateHour" id="dateHour" required>
 

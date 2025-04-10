@@ -64,7 +64,6 @@ class Rdv
     $this->idPatients = $idPatientsPara;
   }
 
-  // Getters
   public function getId()
   {
     return $this->id;
@@ -76,6 +75,11 @@ class Rdv
   }
 
   public function getIdPatient()
+  {
+    return $this->idPatients;
+  }
+
+  public function dropRdv()
   {
     return $this->idPatients;
   }

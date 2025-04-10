@@ -6,36 +6,31 @@ require_once "./src/utils/validation.php";
 require_once "./src/utils/objects.php";
 
 
-function addPatient()
+function addPatient($post)
 {
-  if (isset($_POST['prenom'], $_POST['nom'], $_POST['birthday'], $_POST['phone'], $_POST['email'], $_POST['submit'])) {
-    $bdd = dbConnect('hospitale2n');
-    $tab = [];
-    foreach ($_POST as $key => $value) {
-      $tab[$key] = sanitize($value);
-    }
-    $newFirstName = regexTxt($tab['prenom']) ? $tab['prenom'] : null;
-    $newLastName = regexTxt($tab['nom']) ? $tab['nom'] : null;
-    $newPhone = regexTel($tab['phone']) ? $tab['phone'] : null;
-    $newEmail = regexEmail($tab['email']) ? $tab['email'] : null;
-    $newDate = regexDate($tab['birthday']) ? $tab['birthday'] : null;
-
-    if (!$newFirstName || !$newLastName || !$newPhone || !$newEmail || !$newDate) {
-      throw new Exception("Validation failed: Invalid input data");
-    }
-
-    $stmt = $bdd->prepare("INSERT INTO patients (lastName, firstname, birthdate, phone, mail) VALUES (:lastName, :firstname, :birthdate, :phone, :mail)");
-    $stmt->bindParam(':lastName', $newLastName);
-    $stmt->bindParam(':firstname', $newFirstName);
-    $stmt->bindParam(':birthdate', $newDate);
-    $stmt->bindParam(':phone', $newPhone);
-    $stmt->bindParam(':mail', $newEmail);
-    $stmt->execute();
-
-  } else {
-    echo 'Erreur de form';
-    return false;
+  $bdd = dbConnect('hospitale2n');
+  $tab = [];
+  foreach ($post as $key => $value) {
+    $tab[$key] = sanitize($value);
   }
+  $newFirstName = regexTxt($tab['prenom']) ? $tab['prenom'] : null;
+  $newLastName = regexTxt($tab['nom']) ? $tab['nom'] : null;
+  $newPhone = regexTel($tab['phone']) ? $tab['phone'] : null;
+  $newEmail = regexEmail($tab['email']) ? $tab['email'] : null;
+  $newDate = regexDate($tab['birthday']) ? $tab['birthday'] : null;
+
+  if (!$newFirstName || !$newLastName || !$newPhone || !$newEmail || !$newDate) {
+    throw new Exception("Validation failed: Invalid input data");
+  }
+
+  $stmt = $bdd->prepare("INSERT INTO patients (lastName, firstname, birthdate, phone, mail) VALUES (:lastName, :firstname, :birthdate, :phone, :mail)");
+  $stmt->bindParam(':lastName', $newLastName);
+  $stmt->bindParam(':firstname', $newFirstName);
+  $stmt->bindParam(':birthdate', $newDate);
+  $stmt->bindParam(':phone', $newPhone);
+  $stmt->bindParam(':mail', $newEmail);
+  $stmt->execute();
+
   $bdd = null;
 }
 
@@ -47,7 +42,7 @@ function addRdv()
     foreach ($_POST as $key => $value) {
       $tab[$key] = sanitize($value);
     }
-
+    echo 'hello';
     $idPatients = regexID($tab['idPatients']) ? $tab['idPatients'] : null;
     $dateHour = regexDate($tab['dateHour']) ? $tab['dateHour'] : null;
 
@@ -61,7 +56,6 @@ function addRdv()
     $stmt->execute();
 
   } else {
-    echo 'Erreur de form';
     return false;
   }
   $bdd = null;
@@ -160,4 +154,32 @@ function getRdvById($id)
     );
   }
   return null;
+}
+
+function dropPatient($id)
+{
+  $bdd = dbConnect('hospitale2n');
+
+  // Préparer la requête pour supprimer le patient
+  $stmt = $bdd->prepare("DELETE FROM patients WHERE id = :id");
+  $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+
+  // Exécuter la requête
+  $stmt->execute();
+
+  $bdd = null;
+}
+
+function dropRdv($id)
+{
+  $bdd = dbConnect('hospitale2n');
+
+  // Préparer la requête pour supprimer le patient
+  $stmt = $bdd->prepare("DELETE FROM appointments WHERE id = :id");
+  $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+
+  // Exécuter la requête
+  $stmt->execute();
+
+  $bdd = null;
 }

@@ -4,11 +4,6 @@ $description = "Quickly register a new patient in our system. Fill in the essent
 require_once './src/models/frontend.php';
 ?>
 
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  addPatient();
-}
-?>
 
 <?php ob_start(); ?>
 <section class="hero">
@@ -17,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <p>Remplissez le formulaire ci-dessous pour fixer un rendez-vous avec l'un de nos professionnels de santé. Veuillez
       vérifier attentivement les informations avant de valider.</p>
   </div>
-  <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
+  <form action="" method="post">
     <label for="prenom">Prénom</label>
     <input type="text" name="prenom" id="prenom" placeholder="Prénom" required>
 

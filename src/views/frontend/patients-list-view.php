@@ -34,6 +34,9 @@ $description = "View all registered patient records. Browse the list, search, an
         <td>{$patient->getPhone()}</td>
         <td>{$patient->getMail()}</td>
         <td><a href='./index.php?action=profilPatient&id={$patient->getId()}'>Consulter</a></td>
+        <td>
+        <a href='./index.php?action=deletePatient&id={$patient->getId()}'>Supprimer</a>
+        </td>
       </tr>";
 
       }
