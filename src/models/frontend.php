@@ -1,7 +1,7 @@
 <?php
 // model.php
 
-require_once "dbConnect.php";
+require_once "./src/models/db-connect.php";
 require_once "./src/utils/validation.php";
 require_once "./src/utils/objects.php";
 
@@ -117,6 +117,29 @@ function getRdvList()
 }
 
 function getPatientById($id)
+{
+  $bdd = dbConnect('hospitale2n');
+  $stmt = $bdd->prepare("SELECT id, lastName, firstName, birthDate, phone, mail FROM patients WHERE id = :id");
+  $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+  $stmt->execute();
+
+  $result = $stmt->fetch(PDO::FETCH_ASSOC);
+  $bdd = null;
+
+  if ($result) {
+    return new Patient(
+      $result['id'],
+      $result['lastName'],
+      $result['firstName'],
+      $result['birthDate'],
+      $result['phone'],
+      $result['mail']
+    );
+  }
+  return null;
+}
+
+function getRdvById($id)
 {
   $bdd = dbConnect('hospitale2n');
   $stmt = $bdd->prepare("SELECT id, lastName, firstName, birthDate, phone, mail FROM patients WHERE id = :id");

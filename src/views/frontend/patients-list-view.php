@@ -1,7 +1,6 @@
 <?php
 $title = "Patient List - Patient Management - Saint Gilles Hospital CRM Interface";
 $description = "View all registered patient records. Browse the list, search, and filter patients for simplified and efficient management.";
-require_once '../../models/frontend.php';
 ?>
 
 
@@ -14,7 +13,7 @@ require_once '../../models/frontend.php';
 </section>
 <section class="tableVue">
   <h2>Liste des patients (trier par orde aphabétique)</h2>
-  <?php $patients = getPatientsList(); ?>
+
   <table>
     <tr>
       <th>ID</th>
@@ -23,15 +22,18 @@ require_once '../../models/frontend.php';
       <th>Date de naissance</th>
       <th>téléphone</th>
       <th>email</th>
+      <th>Voir</th>
     </tr>
     <?php if (count($patients) > 0) {
       foreach ($patients as $patient) {
         echo "<tr>
-        <td><a href='../../../index.php?action=profilPatient&id={$patient->getId()}'>" . htmlspecialchars($patient->getLastName()) . "</a></td>
+        <td>{$patient->getId()}</td>
+        <td>{$patient->getLastName()}</td>
         <td>{$patient->getFirstName()}</td>
         <td>{$patient->getBirthDate()}</td>
         <td>{$patient->getPhone()}</td>
         <td>{$patient->getMail()}</td>
+        <td><a href='./index.php?action=profilPatient&id={$patient->getId()}'>Consulter</a></td>
       </tr>";
 
       }

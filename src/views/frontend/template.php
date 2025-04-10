@@ -12,9 +12,9 @@
 
   <link rel="icon" type="image/png" sizes="76x76" href="./public/assets/logos/logo-128.png" />
 
-  <link rel="stylesheet" href="../../../public/css/variables.css" />
-  <link rel="stylesheet" href="../../../public/css/style.css" />
-  <link id="mode" rel="stylesheet" href="../../../public/css/light-mode.css" />
+  <link rel="stylesheet" href="./public/css/variables.css" />
+  <link rel="stylesheet" href="./public/css/style.css" />
+  <link id="mode" rel="stylesheet" href="./public/css/light-mode.css" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,7 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap"
     rel="stylesheet" />
 
-  <link rel="manifest" href="../../../public/manifest.json" />
+  <link rel="manifest" href="./public/manifest.json" />
 </head>
 
 <body>
@@ -34,12 +34,12 @@
 
   <?php require_once('footer.php') ?>
   <!-- Script JS -->
-  <script type="module" src="../../../public/js/modules/<?= htmlspecialchars($scriptName ?? 'default.js') ?>"></script>
-  <script type="module" src="../../../public/js/modules/functions.js"></script>
+  <script type="module" src="./public/js/modules/<?= htmlspecialchars($scriptName ?? 'default.js') ?>"></script>
+  <script type="module" src="./public/js/modules/functions.js"></script>
   <script>
     window.addEventListener('load', () => {
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('../../../public/service-worker.js');
+        navigator.serviceWorker.register('./public/service-worker.js');
       }
     });
   </script>

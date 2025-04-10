@@ -1,7 +1,7 @@
 <?php
 $title = "Add a New Appointment - Patient Management - Saint Gilles Hospital CRM Interface";
 $description = "Easily schedule a patient consultation by entering the key details — streamline your calendar and stay organized.";
-require_once '../../models/frontend.php';
+require_once './src/models/frontend.php';
 ?>
 
 <?php

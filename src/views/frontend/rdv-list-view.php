@@ -1,7 +1,7 @@
 <?php
 $title = "Appointment Details - Patient Management - Saint Gilles Hospital CRM Interface";
 $description = "View detailed information about a specific appointment. Access patient details, consultation notes, and appointment history in one place.";
-require_once '../../models/frontend.php';
+require_once './src/models/frontend.php';
 ?>
 
 
@@ -25,9 +25,8 @@ require_once '../../models/frontend.php';
       foreach ($rdvlist as $rdv) {
         echo "<tr>
       <td>{$rdv->getId()}</td>
-      <td><a href=" . __DIR__ . "/index.php?id={$rdv->getId()}" . ">{$rdv->getId()}</a></td>
       <td>{$rdv->getDate()}</td>
-      <td><a href=\"index.php?action=patientProfile&id={$rdv->getIdPatient()}\">{$rdv->getIdPatient()}</a></td>
+      <td><a href=\"index.php?action=rdvView&id={$rdv->getId()}\">Consulter</a></td>
     </tr>";
       }
     } else {
