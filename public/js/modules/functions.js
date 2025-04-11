@@ -22,8 +22,8 @@ function toggleTheme(theme) {
   const mode = document.querySelector("#mode");
 
   // Define the fixed paths for light and dark mode CSS
-  const lightModePath = "../../../public/css/light-mode.css";
-  const darkModePath = "../../../public/css/dark-mode.css";
+  const lightModePath = "./public/css/light-mode.css";
+  const darkModePath = "./public/css/dark-mode.css";
 
   // Apply the correct theme based on the parameter
   if (theme === "dark") {

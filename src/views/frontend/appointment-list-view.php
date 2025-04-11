@@ -14,15 +14,14 @@ require_once './src/models/frontend.php';
 </section>
 <section class="tableVue">
   <h2>Liste des rendez-vous (trier par orde aphabétique)</h2>
-  <?php $rdvlist = getRdvList(); ?>
   <table>
-    <tr>
+    <tr>$patients =
       <th>ID</th>
       <th>Date</th>
       <th>ID patient</th>
     </tr>
-    <?php if (count($rdvlist) > 0) {
-      foreach ($rdvlist as $rdv) {
+    <?php if (count($appointments) > 0) {
+      foreach ($appointments as $rdv) {
         echo "<tr>
       <td>{$rdv->getId()}</td>
       <td>{$rdv->getDate()}</td>

@@ -1,7 +1,10 @@
 <?php
+/************** Require **************/
+require_once './src/models/frontend.php';
+
+
 $title = "Add Patient - Patient Management - Saint Gilles Hospital CRM Interface";
 $description = "Quickly register a new patient in our system. Fill in the essential information to ensure optimal care at Saint Gilles Hospital.";
-require_once './src/models/frontend.php';
 ?>
 
 
@@ -34,4 +37,7 @@ require_once './src/models/frontend.php';
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require_once('template.php') ?>
+<?php
+/************** Require **************/
+require_once('template.php');
+?>

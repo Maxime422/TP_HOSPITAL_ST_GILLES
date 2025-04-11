@@ -1,7 +1,9 @@
 <?php
+/************** Require **************/
+require_once './src/models/frontend.php';
+
 $title = "Add a New Appointment - Patient Management - Saint Gilles Hospital CRM Interface";
 $description = "Easily schedule a patient consultation by entering the key details — streamline your calendar and stay organized.";
-require_once './src/models/frontend.php';
 ?>
 
 
@@ -22,7 +24,11 @@ require_once './src/models/frontend.php';
 
     <input type="submit" name="submit" class="cta">
   </form>
+</section>
 
-  <?php $content = ob_get_clean(); ?>
+<?php $content = ob_get_clean(); ?>
 
-  <?php require_once('template.php') ?>
+<?php
+/************** Require **************/
+require_once('template.php');
+?>

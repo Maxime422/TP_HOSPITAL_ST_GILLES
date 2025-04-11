@@ -5,8 +5,8 @@
     </a>
     <nav>
       <ul>
-        <li><a href="./index.php?action=patientsList">Patients List</a></li>
-        <li><a href="./index.php?action=rdvList">Appointments List</a></li>
+        <li><a href="./index.php?action=listPatient" title="View the Patients List">Patients List</a></li>
+        <li><a href="./index.php?action=listAppointment" title="View the Appointments List">Appointments List</a></li>
       </ul>
     </nav>
 
@@ -15,7 +15,8 @@
         <i class="fa-solid fa-moon" aria-hidden="true"></i>
       </button>
       <a class="cta secondaryButton" title="Add a New Patient" href="./index.php?action=addPatient">Add Patient</a>
-      <a class="cta primaryButton" title="Add a New Appointment" href="./index.php?action=addRdv">Add Appointment</a>
+      <a class="cta primaryButton" title="Add a New Appointment" href="./index.php?action=addAppointment">Add
+        Appointment</a>
     </div>
   </div>
 </header>

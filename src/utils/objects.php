@@ -51,7 +51,7 @@ class Patient
   }
 }
 
-class Rdv
+class Appointment
 {
   protected $id;
   protected $dateHour;
